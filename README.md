@@ -11,7 +11,7 @@ How to Use
 3. Follow the instructions here: https://docs.hubitat.com/index.php?title=Lutron_Integrator to the point where it describes creating an integration report.
 4. Put the output of the integration report from #3 into a file (e.g., lutron_export.json).
 5. Run the converter against the .json file from #4, specifying an output file. For example, "python3 lutron_hubitat_converter.py lutron_export.json hubitat_import.csv" ... lutron_export.json would be the file name you chose in step 4, and hubitat_import.csv is just where you want the output to go for use in step 6.
-6. If any of your Lutron switches are actually dimmers, edit the hubitat_import.csv file (or whatever you named it in step #5 and put a "d" instead of an "s" in the first column.
+6. The script will assume all your light switches are dimmers, unless they have Switch in the name. It will also assume anything with Fan in the name is a Fan. If this doesn't work for you, or your naming convention is different, edit the hubitat_import.csv file (or whatever you named it in step #5) and change the first letter to 'd', 's', 'f', etc. depending on what device it is. the instructions in step 3 above explain what the valid values here are.
 7. Copy and paste the contents from the output file into Hubitat as shown in the Hubitat instructions (linked above) in the "Use Configuration List" portion.
 8. It should work!
 
